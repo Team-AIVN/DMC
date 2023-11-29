@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Digital Maritime Consultancy</title>
+  <title>Digital Maritime Consultancy ApS</title>
 
   <link rel="icon" href="img/dmc_logo.svg">
 
@@ -22,6 +22,107 @@
   <!-- Custom styles for this template -->
   <link href="css/one-page-wonder.min.css" rel="stylesheet">
 
+  <style>
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      }
+
+      .scroll-container::-webkit-scrollbar {
+      display: none;
+      }
+
+      .overlay-container {
+        position: relative;
+      }
+      .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative; /* z-index 적용을 위해 position 속성 추가 */
+        z-index: 2; /* 첫 번째 div 위에 두기 위해 더 높은 값으로 설정 */
+      }
+
+      .left-box,
+      .right-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust according to your desired container height */
+        width: 50px;
+      }
+
+      .center-box {
+        flex: 1; /* 빈 공간 채우기 */
+      }
+
+      .scroll-indicator {
+      width: 50px;
+      height: 350px;
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+      }
+
+    /* Set the position of the title and description */
+    .section h1 {
+      font-weight: bold;
+      font-size: 2.2em;
+      color: white;
+      padding-top: 15vh;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .section p {
+      color: white;
+      font-size: 1.2em;
+      max-width: 70vw;
+      margin: 0 auto;
+      padding-left: 5vw;
+      padding-right: 5vw;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    /* Set the background of each section */
+    .section {
+      min-width: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    /* Set the background image for each section */
+    #section1 {
+      background-image: url('img/bg-mrr.png');
+    }
+
+    #section2 {
+      background-image: url('img/bg-mrr.png');
+    }
+
+    #section3 {
+      background-image: url('img/bg-mrr.png');
+    }
+
+    #section4 {
+      background-image: url('img/bg-mrr.png');
+    }
+
+  </style>
 </head>
 
 <body>
@@ -36,7 +137,7 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">Digital Maritime Consultancy</h1>
+        <h1 class="mb-0">Digital Maritime Consultancy ApS</h1>
       </div>
     </div>
   </header>
@@ -51,12 +152,95 @@
         </div>
         <div class="col-lg-6 order-lg-1">
           <div class="p-5">
-            <h2 class="display-4">About Us</h2>
-            <p>Digital Maritime Consultancy (DMC) is a small company established in 2017, with the sole purpose of working with the <a href="https://maritimeconnectivity.net/" target="_blank" rel="noopener noreferrer">Maritime Connectivity Platform (MCP)</a>. We work with both the open source reference implementation of the MCP, and are involved in the development of services (in particular service specifications) for the platform.</p>
-            <p>Employees of DMC have had key roles in different large project working on MCP, mainly the EU projects <a href="https://efficiensea2.org/" target="_blank" rel="noopener noreferrer">EfficienSea2</a> and <a href="https://www.stmvalidation.eu/" target="_blank" rel="noopener noreferrer">STM validation project</a>, and the Korean <a href="https://www.smartnav.org/eng/html/Index_New/" target="_blank" rel="noopener noreferrer">SMART Navigation project</a>. We are also involved in the MCP consortium and relevant international organisations such as IALA and IHO.</p>
+            <h3 class="display-5">Who we are</h3>
+            <p>Digital Maritime Consultancy (DMC) is a small Danish company situated in Copenhagen, established in 2017, with the purpose of working with the <a href="https://maritimeconnectivity.net/" target="_blank" rel="noopener noreferrer">Maritime Connectivity Platform (MCP)</a> and related topics. DMC employees have been involved with all aspects of MCP, including software development, hosting, documentation, specification and governing (the CEO of DMC established the MCP consortium in 2019).</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="p-5">
+            <h3 class="display-5">What we do</h3>
+            <p>DMC offers a variety of services and solutions all related to the MCP:</p>
+            <ul>
+              <li><b>Hosting MCP Services (shared)</b>: DMC offers access to an MCP Identity Registry, managed by DMC. This identity registry will be shared by different organisations.</li>
+              <li><b>Hosting MCP services (exclusive)</b>: If organisations wish to have their own MCP, DMC can establish one in a hosted environment, and manage this for the client.</li>
+              <li><b>Hosting of services</b>: DMC can offer hosting of services (delivery of AtoN information for instance) that utilise MCP for authentication and service discoverability.</li>
+              <li><b>Consultancy</b>: In the areas of utilising MCP, MCP integration, service development, service specification (according to IALA G1128 and SECOM) and related topics.</li>
+            </ul>
+            <p>Currently DMC offers MCP identity registry services, but when final specifications for other MCP components are ready (Maritime Messaging Service and Maritime Service Registry) - these will also be provided by DMC.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h3 class="display-5">Current activities</h3>
+            <p>DMC is very active in the MCP consortium, <a href="https://www.iala-aism.org/" target="_blank" rel="noopener noreferrer">IALA</a> and <a href="https://digitalincubator.maritimeconnectivity.net/" target="_blank" rel="noopener noreferrer">The Open Digital Incubator Initiative</a>. The CEO of DMC is currently,</p>
+            <ul>
+              <li>Chairing the general working group of the MCP consortium</li>
+              <li>Leading the IALA task group on development of technical service specification for the provision of AtoN information</li>
+              <li>Leading the IALA task group on development of technical service specifications for VTS</li>
+              <li>Coordinating the Digital Incubator initiative, which focuses on implementation and validation of technical services</li>
+            </ul>
+            <p>DMC is participating in the EU Baltic Sea Region project 'MaDaMe', lead by Turku University of Applied Sciences in Finland. This project focused on many of the aspects DMC is working with, mainly technical services and MCP.</p>
+            <p>Furthermore - DMC is a members of team AIVINautics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="display-5 text-center pb-1">Our competencies</h2>
+
+      <div class="overlay-container">
+        <div class="scroll-container overlay">
+          <div id="section1" class="section">
+            <h1>Maritime Identity Registry</h1>
+            <p>As a team of cybersecurity and maritime experts, we possess the proficiency in implementing and operating MIR's standard specifications and reference implementation.</p>
+          </div>
+    
+          <div id="section2" class="section">
+            <h1>MSR distributed ledger</h1>
+            <p>We have developed the MSR Ledger, a decentralized system for global service discoverability within distributed MSR architectures, and are operating it in the MCC Testbed.</p>
+          </div>
+    
+          <div id="section3" class="section">
+            <h1>MCP Management Portal</h1>
+            <p>We have been developing and managing the Management Portal, a user-friendly frontend prioritizing ease of use, enabling administrators to effortlessly access and utilize all MCP components.</p>
+          </div>
+    
+          <div id="section4" class="section">
+            <h1>Maritime Resource Registry</h1>
+            <p>In collaboration with IALA and KRISO, we have implemented the Maritime Resource Registry, inspired by the DNS structure, as a distributed system utilizing Maritime Resource Name (MRN) as the ID for maritime resources.</p>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="left-box scroll-indicator left">
+            <svg class="red-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" height="50px">
+              <polyline points="12,2 2,12 12,22" fill="none" stroke="#191C48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="center-box"></div>
+          <div class="right-box scroll-indicator right">
+            <svg class="red-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" height="50px">
+              <polyline points="12,2 22,12 12,22" fill="none" stroke="#191C48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <img class="mx-auto d-block" src="img/madame.jpeg">
     </div>
   </section>
 
@@ -70,12 +254,12 @@
         </div>
         <div class="col-lg-6">
           <div class="p-5">
-            <h2 class="display-4">Contact Information</h2>
+            <h2 class="display-5">Contact Information</h2>
             <p>Digital Maritime Consultancy ApS</p>
             <p>Frederiksborggade 5</p>
             <p>1360 København K</p>
             <p>Denmark</p>
-            <p><a href="mailto:contact@dmc.international">contact@dmc.international</a></p>
+            <p>e-mail: <a href="mailto:contact@dmc.international">contact@dmc.international</a></p>
           </div>
         </div>
       </div>
@@ -85,15 +269,40 @@
   <!-- Footer -->
   <footer class="py-5 bg-black">
     <div class="container">
-      <p class="m-0 text-center text-white small">Copyright &copy; 2020 Digital Maritime Consultancy ApS</p>
+      <p class="m-0 text-center text-white small">Copyright &copy; 2023 Digital Maritime Consultancy ApS</p>
     </div>
     <!-- /.container -->
   </footer>
 
+  <script>
+    const container = document.querySelector('.scroll-container');
+    const leftIndicator = document.querySelector('.scroll-indicator.left');
+    const rightIndicator = document.querySelector('.scroll-indicator.right');
+    const numberOfSections = 4;
+
+    console.log(container);
+    console.log(leftIndicator);
+    leftIndicator.addEventListener('click', () => {
+    const currentSectionIndex = Math.round(container.scrollLeft / container.clientWidth);
+    const targetSectionIndex = currentSectionIndex === 0 ? container.children.length - 1 : currentSectionIndex - 1;
+    container.scrollTo({
+    left: container.clientWidth * targetSectionIndex,
+    behavior: 'smooth',
+    });
+    });
+
+    rightIndicator.addEventListener('click', () => {
+    const currentSectionIndex = Math.round(container.scrollLeft / container.clientWidth);
+    const targetSectionIndex = currentSectionIndex === container.children.length - 1 ? 0 : (currentSectionIndex + 1) % numberOfSections;
+    container.scrollTo({
+    left: container.clientWidth * targetSectionIndex,
+    behavior: 'smooth',
+    });
+    });
+  </script>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
