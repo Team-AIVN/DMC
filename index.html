@@ -32,7 +32,15 @@
             -ms-overflow-style: none;
         }
 
-        .scroll-container::-webkit-scrollbar {
+         .participation-logo {
+             max-width: 800px;   /* Adjust based on your preferred size */
+             width: 100%;        /* Responsive scaling */
+             height: auto;       /* Maintain aspect ratio */
+             margin-bottom: 1.5rem; /* Add spacing between images */
+         }
+
+
+    .scroll-container::-webkit-scrollbar {
             display: none;
         }
 
@@ -146,21 +154,24 @@
 
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">DMC</a>
-        <a class="navbar-brand" href="/mcp.html">Documentation</a>
-    </div>
-</nav>
+<!-- Header placeholder -->
+<div id="header-placeholder"></div>
+<script>
+    fetch('partials/header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Failed to load header:', error);
+        });
+</script>
 
-<header class="masthead text-center text-white">
-    <div class="masthead-content">
-        <div class="container">
-            <h1 class="mb-0">Digital Maritime Consultancy ApS</h1>
-        </div>
-    </div>
-</header>
 
 <section>
     <div class="container">
@@ -203,12 +214,11 @@
                             for instance) that utilise MCP for authentication and service discoverability.
                         </li>
                         <li><b>Consultancy</b>: In the areas of utilising MCP, MCP integration, service development,
-                            service specification (according to IALA G1128 and SECOM) and related topics.
+                            service specification (according to <a href="https://www.iala.int/product/g1128/">IALA G1128</a> and <a href="https://webstore.iec.ch/en/publication/64543">SECOM</a>) and related topics.
                         </li>
                     </ul>
-                    <p>Currently, DMC offers MCP identity registry services, but when final specifications for other MCP
-                        components are ready (Maritime Messaging Service and Maritime Service Registry) - these will
-                        also be provided by DMC.</p>
+                    <p>DMC offers a fully operational MCP, including a Maritime Identity Registry (MIR), Maritime Service Registry (MSR) and Maritime Messaging Service (MMS).
+                        Further information is available <a href="/op-mcp.html">here</a>.
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
@@ -234,7 +244,8 @@
                             href="https://www.tuas.fi/en/" target="_blank">Turku University of Applied Sciences</a> in
                         Finland. This project focused on many of the aspects DMC is working with, mainly technical
                         services and MCP.</p>
-                    <p>Furthermore - DMC is a members of <a href="https://aivenautics.com/" target="_blank">team
+                    <p>DMC is also proudly participating in the Optimal Loads project lead by Materna. More information is available at the <a href="https://www.optimal-loads.eu/">Optimal Loads Website</a>.</p>
+                    <p>Furthermore - DMC is a members of <a href="https://aivenautics.com/" target="_blank">Team
                         AIVeNautics</a>.</p>
                 </div>
             </div>
@@ -244,7 +255,7 @@
 
 <section>
     <div class="container">
-        <h2 class="display-5 text-center pb-1">Our competencies</h2>
+        <h2 class="display-5 text-center pb-1">The three core components of MCP</h2>
 
         <div class="overlay-container">
             <div class="scroll-container overlay">
@@ -266,13 +277,6 @@
                         and deployment of the MMS network.</p>
                 </div>
 
-                <div id="section3" class="section">
-                    <h1>MSR distributed ledger</h1>
-                    <p>We have developed the <a href="https://github.com/maritimeconnectivity/MSR_smart_contract"
-                                                target="_blank" rel="noreferrer">MSR Ledger</a>, a decentralized system
-                        for global service discoverability within distributed MSR architectures, and are operating it in
-                        the MCC Testbed.</p>
-                </div>
 
                 <div id="section4" class="section">
                     <h1>Maritime Resource Registry</h1>
@@ -313,9 +317,19 @@
 
 <section>
     <div class="container">
-        <img class="mx-auto d-block" src="img/madame.jpeg">
+        <br>
+        <h2 class="display-5 text-center pb-1">DMC is participating in</h2>
+
+        <a href="https://interreg-baltic.eu/project/madame/" target="_blank" rel="noopener noreferrer">
+            <img class="mx-auto d-block participation-logo" src="img/madame.jpeg" alt="MaDaMe Logo">
+        </a>
+
+        <a href="https://www.optimal-loads.eu/" target="_blank" rel="noopener noreferrer">
+            <img class="mx-auto d-block participation-logo" src="img/LOGO_Optimal_Loads.png" alt="Optimal Loads Logo">
+        </a>
     </div>
 </section>
+
 
 <section>
     <div class="container">
@@ -341,12 +355,24 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-5 bg-black">
-    <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; 2024 Digital Maritime Consultancy ApS</p>
-    </div>
-    <!-- /.container -->
-</footer>
+<div id="footer-placeholder"></div>
+<script>
+    fetch('partials/footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Failed to load footer:', error);
+        });
+</script>
+
+
 
 <script>
     const container = document.querySelector('.scroll-container');
